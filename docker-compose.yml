@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: minha-app-python
+    ports:
+      # Mapeia a porta 8000 do contêiner para a porta 8000 da sua máquina
+      - "8000:8000"
+    volumes:
+      # Monta o diretório atual no diretório /app do contêiner
+      # Isso permite que o --reload funcione corretamente
+      - .:/app
